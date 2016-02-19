@@ -11,9 +11,9 @@ public class DefinitionTest {
   }
 
   @Test
-  public void definition_returnsWordDefinition_wordDefinition() {
+  public void definition_returnsUserDefinition_wordDefinition() {
     Definition testDefinition = new Definition("word definition");
-    assertEquals("word definition", testDefinition.getWordDefinition());
+    assertEquals("word definition", testDefinition.getUserDefinition());
   }
 
   @Test

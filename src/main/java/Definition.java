@@ -2,17 +2,17 @@ import java.util.ArrayList;
 
 public class Definition {
   private static ArrayList<Definition> instances = new ArrayList<Definition>();
-  private String mWordDefinition;
+  private String mUserDefinition;
   private int mId;
 
-  public Definition(String wordDefinition) {
-    mWordDefinition = wordDefinition;
+  public Definition(String userDefinition) {
+    mUserDefinition = userDefinition;
     instances.add(this);
     mId = instances.size();
   }
 
-  public String getWordDefinition() {
-    return mWordDefinition;
+  public String getUserDefinition() {
+    return mUserDefinition;
   }
 
   public static ArrayList<Definition> all() {
