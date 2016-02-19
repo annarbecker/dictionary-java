@@ -25,6 +25,14 @@ body {
   font-size: 18px;
 }
 
+.leftCol {
+  padding-right: 30px;
+}
+
+.rightCol {
+  padding-left: 30px;
+}
+
 .btn {
   color: white;
   background-color: #0A6865;
@@ -51,12 +59,4 @@ body {
 
 #wordListText {
   color: #0A6865;
-}
-
-#leftCol {
-  padding-right: 30px;
-}
-
-#rightCol {
-  padding-left: 30px;
 }

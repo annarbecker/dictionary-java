@@ -20,10 +20,8 @@ public class App {
 
     post("/words", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
       String userWord = request.queryParams("word");
       Word newWord = new Word(userWord);
-
       model.put("wordList", Word.all());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
@@ -32,7 +30,6 @@ public class App {
     get("/words/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
-
       model.put("definitionList", word.getDefinition());
       model.put("word", word);
       model.put("template", "templates/add-definition.vtl");
@@ -55,7 +52,7 @@ public class App {
       Definition newDefinition = new Definition(userDefinition);
 
       definitionList.add(newDefinition);
-
+      
       model.put("definitionList", definitionList);
       model.put("word", word);
       model.put("template", "templates/add-definition.vtl");
