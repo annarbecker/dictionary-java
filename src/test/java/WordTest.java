@@ -23,10 +23,22 @@ public class WordTest{
   }
 
   @Test
+  public void newId_wordInstantiatesWithAnId_true() {
+    Word testWord = new Word("dog");
+    assertEquals(Word.all().size(), testWord.getId());
+  }
+
+  @Test
   public void all_returnsAllInstancesOfWord_true() {
     Word firstWord = new Word("dog");
     Word secondWord = new Word("pig");
     assertTrue(Word.all().contains(firstWord));
     assertTrue(Word.all().contains(secondWord));
+  }
+
+  @Test
+  public void find_returnsWordWithSameId() {
+    Word testWord = new Word("dog");
+    assertEquals(Word.find(testWord.getId()), testWord);
   }
 }
