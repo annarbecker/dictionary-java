@@ -19,6 +19,14 @@ public class WordTest{
   @Test
   public void word_initiallyReturnsEmptyArrayList() {
     Word testWord = new Word("dog");
-    assertTrue(testWord.getDefinition() instanceof ArrayList);  
+    assertTrue(testWord.getDefinition() instanceof ArrayList);
+  }
+
+  @Test
+  public void all_returnsAllInstancesOfWord_true() {
+    Word firstWord = new Word("dog");
+    Word secondWord = new Word("pig");
+    assertTrue(Word.all().contains(firstWord));
+    assertTrue(Word.all().contains(secondWord));
   }
 }
