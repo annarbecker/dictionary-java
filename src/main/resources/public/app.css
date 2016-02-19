@@ -1,0 +1,19 @@
+body {
+  background-image: url("../images/notebook.png");
+}
+
+.container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  width: 75%;
+}
+
+.jumbotron h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 75px;
+  color: #ABA46A;
+  text-align: center;
+}

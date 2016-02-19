@@ -1,14 +1,22 @@
-<h1>Dictionary</h1>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Build Your Dictionary</h3>
+    <form  action="/words" method="post">
+      <input id='wordId' name='wordId' type='hidden' value='$word.getId()'>
 
-<form  action="/words" method="post">
-  <input id='wordId' name='wordId' type='hidden' value='$word.getId()'>
-  <label for="word">Enter a word</label>
-  <input type="text" name="word" id="word" required>
-  <button type="submit" class="btn btn-default">Add Word</button>
-</form>
+      <div class="form-group">
+        <label for="word"></label>
+        <input class="form-control" type="text" name="word" id="word" placeholder="enter a word" required>
+      </div>
 
-<hr>
-<h3>Word List</h3>
-#foreach($word in $wordList)
-<li><a href="/words/$word.getId()">$word.getWord()</a></li>
-#end
+      <button type="submit" class="btn btn-default">Add Word</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h3>Your Dictionary</h3>
+    <hr>
+    #foreach($word in $wordList)
+      <li id="wordList"><a href="/words/$word.getId()">$word.getWord().toUpperCase()</a></li>
+    #end
+  </div>
+</div>
