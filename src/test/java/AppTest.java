@@ -25,18 +25,21 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void createWordTest() {
+  public void displayWordTest() {
     goTo("http://localhost:4567/");
     fill("#word").with("dog");
     submit(".btn");
-    assertThat(pageSource()).contains("dog");
+    assertThat(pageSource()).contains("DOG");
   }
 
   @Test
-  public void createDefintionTest() {
-    goTo("http://localhost:4567/words/1");
-    fill("#definition").with("man's best friend");
+  public void displayDefintionTest() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("dog");
     submit(".btn");
+    click("a", withText("DOG"));
+    fill("#definition").with("man's best friend");
+    submit("#defButton");
     assertThat(pageSource()).contains("man's best friend");
   }
 }
