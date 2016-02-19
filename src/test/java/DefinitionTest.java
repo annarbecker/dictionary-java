@@ -21,5 +21,12 @@ public class DefinitionTest {
     Definition firstDefinition = new Definition("word definition");
     Definition secondDefinition = new Definition("another word definition");
     assertTrue(Definition.all().contains(firstDefinition));
+    assertTrue(Definition.all().contains(secondDefinition));
+  }
+
+  @Test
+  public void newId_definitionInstantiatesWithAnId_true() {
+    Definition testDefinition = new Definition("word definition");
+    assertEquals(Definition.all().size(), testDefinition.getId());
   }
 }
