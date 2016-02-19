@@ -11,7 +11,7 @@ public class Definition {
     mId = instances.size();
   }
 
-  public String getUserDefinition() {
+  public String getDefinition() {
     return mUserDefinition;
   }
 
