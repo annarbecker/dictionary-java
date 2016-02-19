@@ -31,4 +31,12 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("dog");
   }
+
+  @Test
+  public void createDefintionTest() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("dog");
+    submit(".btn");
+    click()
+  }
 }

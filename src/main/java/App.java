@@ -28,5 +28,38 @@ public class App {
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/words/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+
+      model.put("definitionList", word.getDefinition());
+      model.put("word", word);
+      model.put("template", "templates/add-definition.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+    post("/words/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Word word = Word.find(Integer.parseInt(request.params(":id")));
+      Definition definintion = Definition.find(Integer.parseInt(request.params(":id")));
+      ArrayList<Definition> definitionList = word.getDefinition();
+
+      if (definitionList == null) {
+        definitionList = new ArrayList<Definition>();
+        request.session().attribute("definitionList", definitionList);
+      }
+
+      String userDefinition = request.queryParams("definition");
+      Definition newDefinition = new Definition(userDefinition);
+
+      definitionList.add(newDefinition);
+
+      model.put("definitionList", definitionList);
+      model.put("word", word);
+      model.put("template", "templates/add-definition.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
