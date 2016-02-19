@@ -5,4 +5,8 @@ public class Word {
   public Word(String userWord) {
     mUserWord = userWord;
   }
+
+  public String getWord() {
+    return mUserWord;
+  }
 }
