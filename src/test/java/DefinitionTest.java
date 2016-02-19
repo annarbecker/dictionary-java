@@ -36,4 +36,11 @@ public class DefinitionTest {
     Definition secondDefinition = new Definition(" another word definition");
     assertEquals(Definition.find(firstDefinition.getId()), firstDefinition);
   }
+
+  @Test
+  public void clear_emptiesAllDefinitionsFromArrayList() {
+    Definition testDefinition = new Definition("word definition");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
+  }
 }
