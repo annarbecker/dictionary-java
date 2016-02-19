@@ -16,6 +16,9 @@ public class WordTest{
     assertEquals("dog", testWord.getWord());
   }
 
-  // @Test
-  // public void word_initiallyReturnsEmptyArrayList()
+  @Test
+  public void word_initiallyReturnsEmptyArrayList() {
+    Word testWord = new Word("dog");
+    assertTrue(testWord.getDefinition() instanceof ArrayList);  
+  }
 }
