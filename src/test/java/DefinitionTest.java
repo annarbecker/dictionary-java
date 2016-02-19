@@ -15,4 +15,11 @@ public class DefinitionTest {
     Definition testDefinition = new Definition("word definition");
     assertEquals("word definition", testDefinition.getWordDefinition());
   }
+
+  @Test
+  public void all_returnsAllInstancesofDefinition_true() {
+    Definition firstDefinition = new Definition("word definition");
+    Definition secondDefinition = new Definition("another word definition");
+    assertTrue(Definition.all().contains(firstDefinition));
+  }
 }
