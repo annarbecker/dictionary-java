@@ -29,4 +29,11 @@ public class DefinitionTest {
     Definition testDefinition = new Definition("word definition");
     assertEquals(Definition.all().size(), testDefinition.getId());
   }
+
+  @Test
+  public void find_returnsDefinitionWithSameId_wordDefinition() {
+    Definition firstDefinition = new Definition("word definition");
+    Definition secondDefinition = new Definition(" another word definition");
+    assertEquals(Definition.find(firstDefinition.getId()), firstDefinition);
+  }
 }
