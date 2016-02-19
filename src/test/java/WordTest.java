@@ -53,4 +53,11 @@ public class WordTest{
     assertTrue(testWord.getDefinition().contains(firstDefinition));
     assertTrue(testWord.getDefinition().contains(secondDefinition));
   }
+
+  @Test
+  public void clear_removesAllWordInstancesFromMemory() {
+    Word testWord = new Word("dog");
+    Word.clear();
+    assertEquals(Word.all().size(), 0);
+  }
 }

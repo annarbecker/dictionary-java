@@ -41,4 +41,8 @@ public class Word {
     mDefinition.add(userDefinition);
   }
 
+  public static void clear() {
+    instances.clear();
+  }
+
 }
