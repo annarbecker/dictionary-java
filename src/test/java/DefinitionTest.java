@@ -9,4 +9,10 @@ public class DefinitionTest {
     Definition testDefinition = new Definition("word definition");
     assertEquals(true, testDefinition instanceof Definition);
   }
+
+  @Test
+  public void definition_returnsWordDefinition_wordDefinition() {
+    Definition testDefinition = new Definition("word definition");
+    assertEquals("word definition", testDefinition.getWordDefinition());
+  }
 }
