@@ -37,5 +37,8 @@ public class Word {
     }
   }
 
+  public void addDefinition(Definition userDefinition) {
+    mDefinition.add(userDefinition);
+  }
 
 }
